@@ -224,8 +224,8 @@ require_once __DIR__ . '/../libs/vendor/SymconModulHelper/VariableProfileHelper.
                         $this->SetValue('pvtemperature', $Payload['values']['pvtemperature'] * 0.1);
                         $this->SetValue('totworktime', $Payload['values']['totworktime'] * 0.5);
                         $this->SetValue('uwBatVolt_DSP', $Payload['values']['uwBatVolt_DSP']);
-                        $this->SetValue('nbusvolt', $Payload['values']['nbusvolt'] * 0.1);
-                        $this->SetValue('pbusvolt', $Payload['values']['pbusvolt'] * 0.1);
+                        $this->SetValue('nbusvolt', $Payload['values']['nbusvolt']);
+                        $this->SetValue('pbusvolt', $Payload['values']['pbusvolt']);
                         $this->SetValue('Vac_RS', $Payload['values']['Vac_RS'] * 0.1);
                         $this->SetValue('Vac_ST', $Payload['values']['Vac_ST'] * 0.1);
                         $this->SetValue('Vac_TR', $Payload['values']['Vac_TR'] * 0.1);
