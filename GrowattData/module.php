@@ -73,7 +73,7 @@ require_once __DIR__ . '/../libs/vendor/SymconModulHelper/VariableProfileHelper.
             ['pv1voltage', 'PV 1 Voltage', VARIABLETYPE_FLOAT, '~Volt',  false, true],
             ['pv1watt', 'PV 1 Watt', VARIABLETYPE_FLOAT, '~Watt',  false, true],
             ['epv2today', 'PV 2 Today Energy', VARIABLETYPE_FLOAT, '~Electricity',  false, true],
-            ['epv2total', 'PV 2 Total Energy ', VARIABLETYPE_FLOAT, '~Electricity', false, true],
+            ['epv2total', 'PV 2 Total Energy', VARIABLETYPE_FLOAT, '~Electricity', false, true],
             ['pv2current', 'PV 2 Current', VARIABLETYPE_FLOAT, '~Ampere',  false, true],
             ['pv2voltage', 'PV 2 Voltage', VARIABLETYPE_FLOAT, '~Volt',  false, true],
             ['pv2watt', 'PV 2 Watt', VARIABLETYPE_FLOAT, '~Watt',  false, true],
