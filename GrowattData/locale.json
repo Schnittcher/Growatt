@@ -1,0 +1,35 @@
+{
+    "translations": {
+        "de": {
+            "Total Energy": "Gesamtenergie",
+            "PV Energy Today": "PV-Energie heute",
+            "PV Energy Total": "PV-Energie Gesamt",
+            "PV 1 Today Energy": "PV 1 Energie Heute",
+            "PV 1 Total Energy": "PV 1 Energie Gesamt",
+            "PV 1 Current": "PV 1 Stromstärke",
+            "PV 1 Voltage": "PV 1 Volt",
+            "PV 1 Watt": "PV 1 Watt",
+            "PV 2 Today Energy": "PV 2 Energie Heute",
+            "PV 2 Total Energy": "PV 2 Energie Gesamt",
+            "PV 2 Current": "PV 2 Stromstärke",
+            "PV 2 Voltage": "PV 2 Volt",
+            "PV 2 Watt": "PV 2 Watt",
+            "Grid frequency": "Netzfrequenz",
+            "Phase 1 grid current": "Phase 1 Netzstrom (Current)",
+            "Phase 2 grid current": "Phase 2 Netzstrom (Current)",
+            "Phase 3 grid current": "Phase 3 Netzstrom (Current)",
+            "Phase 1 grid power": "Phase 1 Netzstrom (Power)",
+            "Phase 2 grid power": "Phase 2 Netzstrom (Power)",
+            "Phase 3 grid power": "Phase 3 Netzstrom (Power)",
+            "IPM inverter temperature": "Temperatur IPM Wechselrichters",
+            "Actual input power": "Tatsächliche Eingangsleistung",
+            "Actual output power": "Tatsächliche Ausgangsleistung",
+            "Status": "Status",
+            "Inverter temperature": "Wechselrichtertemperatur",
+            "Total Inverter temperature": "Gesamtarbeitszeit des Wechselrichters",
+            "Waiting": "Wartend",
+            "Normal": "Normal",
+            "Fault": "Fehler"
+        }
+    }
+}

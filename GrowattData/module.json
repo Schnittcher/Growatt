@@ -1,0 +1,16 @@
+{
+    "id": "{DD5DF702-0D02-1B47-A552-4A4017E8AAB4}",
+    "name": "GrowattData",
+    "type": 3,
+    "vendor": "Grott",
+    "aliases": ["Growatt Daten"],
+    "parentRequirements": [
+        "{043EA491-0325-4ADD-8FC2-A30C8EEB4D3F}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}"
+    ],
+    "prefix": "GROWATT",
+    "url": "https://deinsmarthome.info"
+}

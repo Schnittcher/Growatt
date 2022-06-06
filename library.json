@@ -1,0 +1,12 @@
+{
+    "id": "{3DAD9940-2B2B-E082-0CF6-9DC368E36ED5}",
+    "name": "Growatt",
+    "author": "Kai Schnittcher",
+    "url": "https://deinsmarthome.info",
+    "compatibility": {
+        "version": "6.0"
+    },
+    "version": "1.0",
+    "build": 0,
+    "date": 0
+}
