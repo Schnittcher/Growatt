@@ -191,45 +191,46 @@ require_once __DIR__ . '/../libs/vendor/SymconModulHelper/VariableProfileHelper.
                 $data = json_decode($JSONString, true);
                 if (array_key_exists('Topic', $data)) {
                     if (fnmatch('energy/growatt', $data['Topic'])) {
-                        $this->SendDebug('Payload', $data['Payload'], 0);
-                        $Payload = json_decode($data['Payload'], true);
-
-                        $this->SetValue('epvtotal', $Payload['values']['epvtotal'] * 0.1);
-                        $this->SetValue('pvenergytoday', $Payload['values']['pvenergytoday'] * 0.1);
-                        $this->SetValue('pvenergytotal', $Payload['values']['pvenergytotal'] * 0.1);
-                        $this->SetValue('epv1today', $Payload['values']['epv1today'] * 0.1);
-                        $this->SetValue('epv1total', $Payload['values']['epv1total'] * 0.1);
-                        $this->SetValue('pv1current', $Payload['values']['pv1current'] * 0.1);
-                        $this->SetValue('pv1voltage', $Payload['values']['pv1voltage'] * 0.1);
-                        $this->SetValue('pv1watt', $Payload['values']['pv1watt'] * 0.1);
-                        $this->SetValue('epv2today', $Payload['values']['epv2today'] * 0.1);
-                        $this->SetValue('epv2total', $Payload['values']['epv2total'] * 0.1);
-                        $this->SetValue('pv2current', $Payload['values']['pv2current'] * 0.1);
-                        $this->SetValue('pv2voltage', $Payload['values']['pv2voltage'] * 0.1);
-                        $this->SetValue('pv2watt', $Payload['values']['pv2watt'] * 0.1);
-                        $this->SetValue('pvfrequentie', $Payload['values']['pvfrequentie'] * 0.01);
-                        $this->SetValue('pvgridcurrent', $Payload['values']['pvgridcurrent'] * 0.1);
-                        $this->SetValue('pvgridcurrent2', $Payload['values']['pvgridcurrent2'] * 0.1);
-                        $this->SetValue('pvgridcurrent3', $Payload['values']['pvgridcurrent3'] * 0.1);
-                        $this->SetValue('pvgridpower', $Payload['values']['pvgridpower'] * 0.1);
-                        $this->SetValue('pvgridpower2', $Payload['values']['pvgridpower2'] * 0.1);
-                        $this->SetValue('pvgridpower3', $Payload['values']['pvgridpower3'] * 0.1);
-                        $this->SetValue('pvgridvoltage', $Payload['values']['pvgridvoltage'] * 0.1);
-                        $this->SetValue('pvgridvoltage2', $Payload['values']['pvgridvoltage2'] * 0.1);
-                        $this->SetValue('pvgridvoltage3', $Payload['values']['pvgridvoltage3'] * 0.1);
-                        $this->SetValue('pvipmtemperature', $Payload['values']['pvipmtemperature'] * 0.1);
-                        $this->SetValue('pvpowerin', $Payload['values']['pvpowerin'] * 0.1);
-                        $this->SetValue('pvpowerout', $Payload['values']['pvpowerout'] * 0.1);
-                        $this->SetValue('pvstatus', $Payload['values']['pvstatus']);
-                        $this->SetValue('pvtemperature', $Payload['values']['pvtemperature'] * 0.1);
-                        $this->SetValue('totworktime', $Payload['values']['totworktime'] * 0.5);
-                        $this->SetValue('uwBatVolt_DSP', $Payload['values']['uwBatVolt_DSP']);
-                        $this->SetValue('nbusvolt', $Payload['values']['nbusvolt']);
-                        $this->SetValue('pbusvolt', $Payload['values']['pbusvolt']);
-                        $this->SetValue('Vac_RS', $Payload['values']['Vac_RS'] * 0.1);
-                        $this->SetValue('Vac_ST', $Payload['values']['Vac_ST'] * 0.1);
-                        $this->SetValue('Vac_TR', $Payload['values']['Vac_TR'] * 0.1);
-                        $this->SetValue('pvboottemperature', $Payload['values']['pvboottemperature'] * 0.1);
+                        if ($Payload['buffered'] == 'no') {
+                            $this->SendDebug('Payload', $data['Payload'], 0);
+                            $Payload = json_decode($data['Payload'], true);
+                            $this->SetValue('epvtotal', $Payload['values']['epvtotal'] * 0.1);
+                            $this->SetValue('pvenergytoday', $Payload['values']['pvenergytoday'] * 0.1);
+                            $this->SetValue('pvenergytotal', $Payload['values']['pvenergytotal'] * 0.1);
+                            $this->SetValue('epv1today', $Payload['values']['epv1today'] * 0.1);
+                            $this->SetValue('epv1total', $Payload['values']['epv1total'] * 0.1);
+                            $this->SetValue('pv1current', $Payload['values']['pv1current'] * 0.1);
+                            $this->SetValue('pv1voltage', $Payload['values']['pv1voltage'] * 0.1);
+                            $this->SetValue('pv1watt', $Payload['values']['pv1watt'] * 0.1);
+                            $this->SetValue('epv2today', $Payload['values']['epv2today'] * 0.1);
+                            $this->SetValue('epv2total', $Payload['values']['epv2total'] * 0.1);
+                            $this->SetValue('pv2current', $Payload['values']['pv2current'] * 0.1);
+                            $this->SetValue('pv2voltage', $Payload['values']['pv2voltage'] * 0.1);
+                            $this->SetValue('pv2watt', $Payload['values']['pv2watt'] * 0.1);
+                            $this->SetValue('pvfrequentie', $Payload['values']['pvfrequentie'] * 0.01);
+                            $this->SetValue('pvgridcurrent', $Payload['values']['pvgridcurrent'] * 0.1);
+                            $this->SetValue('pvgridcurrent2', $Payload['values']['pvgridcurrent2'] * 0.1);
+                            $this->SetValue('pvgridcurrent3', $Payload['values']['pvgridcurrent3'] * 0.1);
+                            $this->SetValue('pvgridpower', $Payload['values']['pvgridpower'] * 0.1);
+                            $this->SetValue('pvgridpower2', $Payload['values']['pvgridpower2'] * 0.1);
+                            $this->SetValue('pvgridpower3', $Payload['values']['pvgridpower3'] * 0.1);
+                            $this->SetValue('pvgridvoltage', $Payload['values']['pvgridvoltage'] * 0.1);
+                            $this->SetValue('pvgridvoltage2', $Payload['values']['pvgridvoltage2'] * 0.1);
+                            $this->SetValue('pvgridvoltage3', $Payload['values']['pvgridvoltage3'] * 0.1);
+                            $this->SetValue('pvipmtemperature', $Payload['values']['pvipmtemperature'] * 0.1);
+                            $this->SetValue('pvpowerin', $Payload['values']['pvpowerin'] * 0.1);
+                            $this->SetValue('pvpowerout', $Payload['values']['pvpowerout'] * 0.1);
+                            $this->SetValue('pvstatus', $Payload['values']['pvstatus']);
+                            $this->SetValue('pvtemperature', $Payload['values']['pvtemperature'] * 0.1);
+                            $this->SetValue('totworktime', $Payload['values']['totworktime'] * 0.5);
+                            $this->SetValue('uwBatVolt_DSP', $Payload['values']['uwBatVolt_DSP']);
+                            $this->SetValue('nbusvolt', $Payload['values']['nbusvolt']);
+                            $this->SetValue('pbusvolt', $Payload['values']['pbusvolt']);
+                            $this->SetValue('Vac_RS', $Payload['values']['Vac_RS'] * 0.1);
+                            $this->SetValue('Vac_ST', $Payload['values']['Vac_ST'] * 0.1);
+                            $this->SetValue('Vac_TR', $Payload['values']['Vac_TR'] * 0.1);
+                            $this->SetValue('pvboottemperature', $Payload['values']['pvboottemperature'] * 0.1);
+                        }
                     }
                 }
             }
