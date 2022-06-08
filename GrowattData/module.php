@@ -191,9 +191,9 @@ require_once __DIR__ . '/../libs/vendor/SymconModulHelper/VariableProfileHelper.
                 $data = json_decode($JSONString, true);
                 if (array_key_exists('Topic', $data)) {
                     if (fnmatch('energy/growatt', $data['Topic'])) {
+                        $Payload = json_decode($data['Payload'], true);
                         if ($Payload['buffered'] == 'no') {
                             $this->SendDebug('Payload', $data['Payload'], 0);
-                            $Payload = json_decode($data['Payload'], true);
                             $this->SetValue('epvtotal', $Payload['values']['epvtotal'] * 0.1);
                             $this->SetValue('pvenergytoday', $Payload['values']['pvenergytoday'] * 0.1);
                             $this->SetValue('pvenergytotal', $Payload['values']['pvenergytotal'] * 0.1);
