@@ -3,7 +3,9 @@
     "name": "Growatt TL3X",
     "type": 3,
     "vendor": "Growatt",
-    "aliases": ["Growatt TL3-X"],
+    "aliases": [
+        "Growatt TL3-X"
+    ],
     "parentRequirements": [
         "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"
     ],
