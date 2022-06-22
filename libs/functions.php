@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (!function_exists('fnmatch')) {
     define('FNM_PATHNAME', 1);
     define('FNM_NOESCAPE', 2);
