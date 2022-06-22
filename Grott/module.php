@@ -2,66 +2,12 @@
 
 declare(strict_types=1);
 
-if (!function_exists('fnmatch')) {
-    define('FNM_PATHNAME', 1);
-    define('FNM_NOESCAPE', 2);
-    define('FNM_PERIOD', 4);
-    define('FNM_CASEFOLD', 16);
+eval('declare(strict_types=1);namespace Growatt {?>' . file_get_contents(__DIR__ . '/../libs/vendor/SymconModulHelper/VariableProfileHelper.php') . '}');
+require_once __DIR__ . '/../libs/functions.php';
 
-    function fnmatch($pattern, $string, $flags = 0)
+    class Grott extends IPSModule
     {
-        return pcre_fnmatch($pattern, $string, $flags);
-    }
-}
-
-function pcre_fnmatch($pattern, $string, $flags = 0)
-{
-    $modifiers = null;
-    $transforms = [
-        '\*'      => '.*',
-        '\?'      => '.',
-        '\[\!'    => '[^',
-        '\['      => '[',
-        '\]'      => ']',
-        '\.'      => '\.',
-        '\\'      => '\\\\'
-    ];
-
-    // Forward slash in string must be in pattern:
-    if ($flags & FNM_PATHNAME) {
-        $transforms['\*'] = '[^/]*';
-    }
-
-    // Back slash should not be escaped:
-    if ($flags & FNM_NOESCAPE) {
-        unset($transforms['\\']);
-    }
-
-    // Perform case insensitive match:
-    if ($flags & FNM_CASEFOLD) {
-        $modifiers .= 'i';
-    }
-
-    // Period at start must be the same as pattern:
-    if ($flags & FNM_PERIOD) {
-        if (strpos($string, '.') === 0 && strpos($pattern, '.') !== 0) {
-            return false;
-        }
-    }
-
-    $pattern = '#^'
-        . strtr(preg_quote($pattern, '#'), $transforms)
-        . '$#'
-        . $modifiers;
-
-    return (boolean) preg_match($pattern, $string);
-}
-
-require_once __DIR__ . '/../libs/vendor/SymconModulHelper/VariableProfileHelper.php';
-
-    class GrowattData extends IPSModule
-    {
-        use VariableProfileHelper;
+        use Growatt\VariableProfileHelper;
 
         public static $Variables = [
             ['epvtotal', 'Total Energy', VARIABLETYPE_FLOAT, '~Electricity', false, true],
@@ -108,7 +54,6 @@ require_once __DIR__ . '/../libs/vendor/SymconModulHelper/VariableProfileHelper.
             parent::Create();
             $this->ConnectParent('{C6D2AEB3-6E1F-4B2E-8E69-3A1A00246850}');
             $this->RegisterPropertyString('MQTTTopic', '');
-            //protected function RegisterProfileIntegerEx($Name, $Icon, $Prefix, $Suffix, $Associations, $MaxValue = -1, $StepSize=0)
 
             $this->RegisterProfileIntegerEx(
                 'GrowattData.Status',
