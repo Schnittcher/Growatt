@@ -1,0 +1,18 @@
+{
+    "id": "{276216A9-6400-41C6-B6BD-4FF56D3FC8C1}",
+    "name": "Growatt-S",
+    "type": 3,
+    "vendor": "Growatt",
+    "aliases": [
+        "Growatt S"
+    ],
+    "parentRequirements": [
+        "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"
+    ],
+    "prefix": "GWS",
+    "url": "https://deinsmarthome.info"
+}

@@ -30,6 +30,7 @@ Für die Einbindung über ModBus muss der Wechselrichter via ModBus RTU mit IP-S
 
 * [Grott](Grott/README.md)
 * [GrowattTL3-X](GrowattTL3-X/README.md)
+* [Growatt-S](Growatt-S/README.md)
 
 ## 3. Installation
 Installation über den IP-Symcon Module Store.
