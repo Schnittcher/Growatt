@@ -40,7 +40,16 @@
             "Inactive": "Inaktiv",
             "Timer Interval": "Timer Intervall",
             "Variables": "Variablen",
-            "Read values": "Werte lesen"
+            "Read values": "Werte lesen",
+            "L1 Voltage": "L1 Netzspannung",
+            "L1 Output Current": "L1 Netzausgangsstromstärke",
+            "L2 Voltage": "L2 Netzspannung",
+            "L2 Output Current": "L2 Netzausgangsstromstärke",
+            "L3 Voltage": "L3 Netzspannung",
+            "L3 Output Current": "L3 Netzausgangsstromstärke",
+            "L1 L2 Voltage": " L1 L2 Außenleiterspannungen",
+            "L2 L3 Voltage": " L2 L3 Außenleiterspannungen",
+            "L3 L1 Voltage": " L3 L1 Außenleiterspannungen"
         }
     }
 }
