@@ -134,6 +134,12 @@ require_once __DIR__ . '/../libs/functions.php';
             $this->SendDebug('JSON', $JSONString, 0);
             if (!empty($this->ReadPropertyString('MQTTTopic'))) {
                 $data = json_decode($JSONString, true);
+
+                //Für MQTT Fix in IPS Version 6.3
+                if (IPS_GetKernelDate() > 1670886000) {
+                    $data['Payload'] = utf8_decode($data['Payload']);
+                }
+
                 if (array_key_exists('Topic', $data)) {
                     if (fnmatch('energy/growatt', $data['Topic'])) {
                         $Payload = json_decode($data['Payload'], true);
