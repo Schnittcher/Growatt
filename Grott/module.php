@@ -145,42 +145,106 @@ require_once __DIR__ . '/../libs/functions.php';
                         $Payload = json_decode($data['Payload'], true);
                         if ($Payload['buffered'] == 'no') {
                             $this->SendDebug('Payload', $data['Payload'], 0);
-                            $this->SetValue('epvtotal', $Payload['values']['epvtotal'] * 0.1);
-                            $this->SetValue('pvenergytoday', $Payload['values']['pvenergytoday'] * 0.1);
-                            $this->SetValue('pvenergytotal', $Payload['values']['pvenergytotal'] * 0.1);
-                            $this->SetValue('epv1today', $Payload['values']['epv1today'] * 0.1);
-                            $this->SetValue('epv1total', $Payload['values']['epv1total'] * 0.1);
-                            $this->SetValue('pv1current', $Payload['values']['pv1current'] * 0.1);
-                            $this->SetValue('pv1voltage', $Payload['values']['pv1voltage'] * 0.1);
-                            $this->SetValue('pv1watt', $Payload['values']['pv1watt'] * 0.1);
-                            $this->SetValue('epv2today', $Payload['values']['epv2today'] * 0.1);
-                            $this->SetValue('epv2total', $Payload['values']['epv2total'] * 0.1);
-                            $this->SetValue('pv2current', $Payload['values']['pv2current'] * 0.1);
-                            $this->SetValue('pv2voltage', $Payload['values']['pv2voltage'] * 0.1);
-                            $this->SetValue('pv2watt', $Payload['values']['pv2watt'] * 0.1);
-                            $this->SetValue('pvfrequentie', $Payload['values']['pvfrequentie'] * 0.01);
-                            $this->SetValue('pvgridcurrent', $Payload['values']['pvgridcurrent'] * 0.1);
-                            $this->SetValue('pvgridcurrent2', $Payload['values']['pvgridcurrent2'] * 0.1);
-                            $this->SetValue('pvgridcurrent3', $Payload['values']['pvgridcurrent3'] * 0.1);
-                            $this->SetValue('pvgridpower', $Payload['values']['pvgridpower'] * 0.1);
-                            $this->SetValue('pvgridpower2', $Payload['values']['pvgridpower2'] * 0.1);
-                            $this->SetValue('pvgridpower3', $Payload['values']['pvgridpower3'] * 0.1);
-                            $this->SetValue('pvgridvoltage', $Payload['values']['pvgridvoltage'] * 0.1);
-                            $this->SetValue('pvgridvoltage2', $Payload['values']['pvgridvoltage2'] * 0.1);
-                            $this->SetValue('pvgridvoltage3', $Payload['values']['pvgridvoltage3'] * 0.1);
-                            $this->SetValue('pvipmtemperature', $Payload['values']['pvipmtemperature'] * 0.1);
-                            $this->SetValue('pvpowerin', $Payload['values']['pvpowerin'] * 0.1);
-                            $this->SetValue('pvpowerout', $Payload['values']['pvpowerout'] * 0.1);
-                            $this->SetValue('pvstatus', $Payload['values']['pvstatus']);
-                            $this->SetValue('pvtemperature', $Payload['values']['pvtemperature'] * 0.1);
-                            $this->SetValue('totworktime', $Payload['values']['totworktime'] * 0.5);
-                            $this->SetValue('uwBatVolt_DSP', $Payload['values']['uwBatVolt_DSP']);
-                            $this->SetValue('nbusvolt', $Payload['values']['nbusvolt']);
-                            $this->SetValue('pbusvolt', $Payload['values']['pbusvolt']);
-                            $this->SetValue('Vac_RS', $Payload['values']['Vac_RS'] * 0.1);
-                            $this->SetValue('Vac_ST', $Payload['values']['Vac_ST'] * 0.1);
-                            $this->SetValue('Vac_TR', $Payload['values']['Vac_TR'] * 0.1);
-                            $this->SetValue('pvboottemperature', $Payload['values']['pvboottemperature'] * 0.1);
+
+                            if (array_key_exists('epvtotal', $Payload['values'])) {
+                                $this->SetValue('epvtotal', $Payload['values']['epvtotal'] * 0.1);
+                            }
+                            if (array_key_exists('pvenergytoday', $Payload['values'])) {
+                                $this->SetValue('pvenergytoday', $Payload['values']['pvenergytoday'] * 0.1);
+                            }
+                            if (array_key_exists('epv1today', $Payload['values'])) {
+                                $this->SetValue('epv1today', $Payload['values']['epv1today'] * 0.1);
+                            }
+                            if (array_key_exists('pv1current', $Payload['values'])) {
+                                $this->SetValue('pv1current', $Payload['values']['pv1current'] * 0.1);
+                            }
+                            if (array_key_exists('pv1voltage', $Payload['values'])) {
+                                $this->SetValue('pv1voltage', $Payload['values']['pv1voltage'] * 0.1);
+                            }
+                            if (array_key_exists('pv1watt', $Payload['values'])) {
+                                $this->SetValue('pv1watt', $Payload['values']['pv1watt'] * 0.1);
+                            }
+                            if (array_key_exists('epv2today', $Payload['values'])) {
+                                $this->SetValue('epv2today', $Payload['values']['epv2today'] * 0.1);
+                            }
+                            if (array_key_exists('epv2total', $Payload['values'])) {
+                                $this->SetValue('epv2total', $Payload['values']['epv2total'] * 0.1);
+                            }
+                            if (array_key_exists('pv2current', $Payload['values'])) {
+                                $this->SetValue('pv2current', $Payload['values']['pv2current'] * 0.1);
+                            }
+                            if (array_key_exists('pv2voltage', $Payload['values'])) {
+                                $this->SetValue('pv2voltage', $Payload['values']['pv2voltage'] * 0.1);
+                            }
+                            if (array_key_exists('pv2watt', $Payload['values'])) {
+                                $this->SetValue('pv2watt', $Payload['values']['pv2watt'] * 0.1);
+                            }
+                            if (array_key_exists('pvfrequentie', $Payload['values'])) {
+                                $this->SetValue('pvfrequentie', $Payload['values']['pvfrequentie'] * 0.01);
+                            }
+                            if (array_key_exists('pvgridcurrent', $Payload['values'])) {
+                                $this->SetValue('pvgridcurrent', $Payload['values']['pvgridcurrent'] * 0.1);
+                            }
+                            if (array_key_exists('pvgridcurrent3', $Payload['values'])) {
+                                $this->SetValue('pvgridcurrent3', $Payload['values']['pvgridcurrent3'] * 0.1);
+                            }
+                            if (array_key_exists('pvgridpower', $Payload['values'])) {
+                                $this->SetValue('pvgridpower', $Payload['values']['pvgridpower'] * 0.1);
+                            }
+                            if (array_key_exists('pvgridpower2', $Payload['values'])) {
+                                $this->SetValue('pvgridpower2', $Payload['values']['pvgridpower2'] * 0.1);
+                            }
+                            if (array_key_exists('pvgridpower3', $Payload['values'])) {
+                                $this->SetValue('pvgridpower3', $Payload['values']['pvgridpower3'] * 0.1);
+                            }
+                            if (array_key_exists('pvgridvoltage', $Payload['values'])) {
+                                $this->SetValue('pvgridvoltage', $Payload['values']['pvgridvoltage'] * 0.1);
+                            }
+                            if (array_key_exists('pvgridvoltage2', $Payload['values'])) {
+                                $this->SetValue('pvgridvoltage2', $Payload['values']['pvgridvoltage2'] * 0.1);
+                            }
+                            if (array_key_exists('pvgridvoltage3', $Payload['values'])) {
+                                $this->SetValue('pvgridvoltage3', $Payload['values']['pvgridvoltage3'] * 0.1);
+                            }
+                            if (array_key_exists('pvipmtemperature', $Payload['values'])) {
+                                $this->SetValue('pvipmtemperature', $Payload['values']['pvipmtemperature'] * 0.1);
+                            }
+                            if (array_key_exists('pvpowerin', $Payload['values'])) {
+                                $this->SetValue('pvpowerin', $Payload['values']['pvpowerin'] * 0.1);
+                            }
+                            if (array_key_exists('pvpowerout', $Payload['values'])) {
+                                $this->SetValue('pvpowerout', $Payload['values']['pvpowerout'] * 0.1);
+                            }
+                            if (array_key_exists('pvstatus', $Payload['values'])) {
+                                $this->SetValue('pvstatus', $Payload['values']['pvstatus']);
+                            }
+                            if (array_key_exists('pvtemperature', $Payload['values'])) {
+                                $this->SetValue('pvtemperature', $Payload['values']['pvtemperature'] * 0.1);
+                            }
+                            if (array_key_exists('totworktime', $Payload['values'])) {
+                                $this->SetValue('totworktime', $Payload['values']['totworktime'] * 0.5);
+                            }
+                            if (array_key_exists('uwBatVolt_DSP', $Payload['values'])) {
+                                $this->SetValue('uwBatVolt_DSP', $Payload['values']['uwBatVolt_DSP']);
+                            }
+                            if (array_key_exists('nbusvolt', $Payload['values'])) {
+                                $this->SetValue('nbusvolt', $Payload['values']['nbusvolt']);
+                            }
+                            if (array_key_exists('pbusvolt', $Payload['values'])) {
+                                $this->SetValue('pbusvolt', $Payload['values']['pbusvolt']);
+                            }
+                            if (array_key_exists('Vac_RS', $Payload['values'])) {
+                                $this->SetValue('Vac_RS', $Payload['values']['Vac_RS'] * 0.1);
+                            }
+                            if (array_key_exists('Vac_ST', $Payload['values'])) {
+                                $this->SetValue('Vac_ST', $Payload['values']['Vac_ST'] * 0.1);
+                            }
+                            if (array_key_exists('Vac_TR', $Payload['values'])) {
+                                $this->SetValue('Vac_TR', $Payload['values']['Vac_TR'] * 0.1);
+                            }
+                            if (array_key_exists('pvboottemperature', $Payload['values'])) {
+                                $this->SetValue('pvboottemperature', $Payload['values']['pvboottemperature'] * 0.1);
+                            }
                         }
                     }
                 }
