@@ -186,4 +186,11 @@ require_once __DIR__ . '/../libs/functions.php';
                 }
             }
         }
+        protected function SetValue($Ident, $Value)
+        {
+            if (@$this->GetIDForIdent($Ident)) {
+                $this->SendDebug('SetValue :: ' . $Ident, $Value, 0);
+                parent::SetValue($Ident, $Value);
+            }
+        }
     }
