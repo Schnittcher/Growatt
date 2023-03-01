@@ -1,0 +1,18 @@
+{
+    "id": "{C1E62679-ECB1-47FD-8278-CBC916435EAC}",
+    "name": "GrowattTL3 BH UP",
+    "type": 3,
+    "vendor": "Growatt",
+    "aliases": [
+        "Growatt TL3-BH UP"
+    ],
+    "parentRequirements": [
+        "{E310B701-4AE7-458E-B618-EC13A1A6F6A8}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{77B31ABB-18FA-4B91-BB63-E5B2AB5588F4}"
+    ],
+    "prefix": "GWTL3BHUP",
+    "url": "https://deinsmarthome.info"
+}

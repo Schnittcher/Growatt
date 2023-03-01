@@ -7,12 +7,16 @@
    Mit diesem Modul ist es möglich die Wechselrichter der Firma Growatt über ModBus oder Grott (https://github.com/johanmeijer/grott) in IP-Symcon einzubinden.
  
    ## Inhaltverzeichnis
-   1. [Voraussetzungen](#1-voraussetzungen)
-   2. [Enthaltene Module](#2-enthaltene-module)
-   3. [Installation](#3-installation)
-   4. [Konfiguration in IP-Symcon](#4-konfiguration-in-ip-symcon)
-   5. [Spenden](#5-spenden)
-   6. [Lizenz](#6-lizenz)
+- [Growatt](#growatt)
+  - [Inhaltverzeichnis](#inhaltverzeichnis)
+  - [1. Voraussetzungen](#1-voraussetzungen)
+    - [1.1 Einbindung über Grott](#11-einbindung-über-grott)
+    - [1.2 Einbindung über ModBus](#12-einbindung-über-modbus)
+  - [2. Enthaltene Module](#2-enthaltene-module)
+  - [3. Installation](#3-installation)
+  - [4. Konfiguration in IP-Symcon](#4-konfiguration-in-ip-symcon)
+  - [5. Spenden](#5-spenden)
+  - [6. Lizenz](#6-lizenz)
    
 ## 1. Voraussetzungen
 
@@ -29,8 +33,10 @@ Für die Einbindung über ModBus muss der Wechselrichter via ModBus RTU mit IP-S
 ## 2. Enthaltene Module
 
 * [Grott](Grott/README.md)
-* [GrowattTL3-X](GrowattTL3-X/README.md)
 * [Growatt-S](Growatt-S/README.md)
+* [GrowattTL3-BH-UP](GrowattTL3-BH-UP/README.md)
+* [GrowattTL3-X](GrowattTL3-X/README.md)
+
 
 ## 3. Installation
 Installation über den IP-Symcon Module Store.
