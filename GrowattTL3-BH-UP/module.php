@@ -8,7 +8,6 @@ require_once __DIR__ . '/../libs/GrowattModBus.php';
     {
         const PREFIX = 'GWTL3BHUP';
         public static $Variables = [
-            ['Output Power', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0024, 4, 1,  null, true],
             ['Input Power', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0002, 4, 1,  null, true],
             ['Total Energy', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0038, 4, 1,  null, true],
             ['Today Energy', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0036, 4, 1,  null, true],
@@ -25,8 +24,6 @@ require_once __DIR__ . '/../libs/GrowattModBus.php';
             ['PV2 Voltage', VARIABLETYPE_FLOAT, '~Volt', 0.1,  0x0007, 4, 1,  null, true],
             ['Inverter Boost Temperature', VARIABLETYPE_FLOAT, '~Temperature', 0.1,  0x005F, 4, 1,  null, true],
             ['Inverter IPM Temperature', VARIABLETYPE_FLOAT, '~Temperature', 0.1,  0x005E, 4, 1,  null, true],
-            ['Total Worktime', VARIABLETYPE_FLOAT, '', 0.5,  0x003A, 4, 1,  null, true],
-            ['Inverter Status', VARIABLETYPE_INTEGER, 'Growatt.Status', null,  0x0000, 4, 1,  null, true],
             ['Inverter Temperature', VARIABLETYPE_FLOAT, '~Temperature', 0.1,  0x5D, 4, 1,  null, true],
             ['Active Power Rate', VARIABLETYPE_INTEGER, '~Intensity.100', null,  0x0003, 3, 1,  6, true],
             ['Memory State', VARIABLETYPE_INTEGER, 'Growatt.MemoryState', null,  0x0002, 3, 1,  6, true],
@@ -36,17 +33,22 @@ require_once __DIR__ . '/../libs/GrowattModBus.php';
             ['Phase 2 Grid Output Current', VARIABLETYPE_FLOAT, '~Ampere', 0.1,  0x002B, 4, 1,  null, true],
             ['Phase 3 Grid Voltage', VARIABLETYPE_FLOAT, '~Volt', 0.1,  0x002E, 4, 1,  null, true],
             ['Phase 3 Grid Output Current', VARIABLETYPE_FLOAT, '~Ampere', 0.1,  0x002F, 4, 1,  null, true],
-            ['Current electricity consumption',VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x040E, 4, 1,  null, true],
-			['GridPower to local load',VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0075, 4, 1,  null, true],
-			['Total electricity from grid',VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0417, 4, 1,  null, true],
-			['Total power consumption',VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0427, 4, 1,  null, true],
-			['Battery State',VARIABLETYPE_INTEGER, '~Intensity.100', null,  0x03F6, 4, 1,  null, true],
-			['AC power to grid',VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0400, 4, 1,  null, true],
-			['AC power to user',VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x03FE, 4, 1,  null, true],
-			['Battery Temperature',VARIABLETYPE_FLOAT, '~Temperature', 0.1,  0x0410, 4, 1,  null, true],
-            ['L1 L2 Voltage', VARIABLETYPE_FLOAT, '~Volt', 0.1,  0x0032, 4, 1,  null, true],
-            ['L2 L3 Voltage', VARIABLETYPE_FLOAT, '~Volt', 0.1,  0x0033, 4, 1,  null, true],
-            ['L3 L1 Voltage', VARIABLETYPE_FLOAT, '~Volt', 0.1,  0x0034, 4, 1,  null, true]
+            ['Current electricity consumption', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x040E, 4, 1,  null, true],
+            ['Total electricity from grid', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0417, 4, 1,  null, true],
+            ['Total power consumption', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0427, 4, 1,  null, true],
+            ['Battery State', VARIABLETYPE_INTEGER, '~Intensity.100', null,  0x03F6, 4, 1,  null, true],
+            ['AC power to grid', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0400, 4, 1,  null, true],
+            ['AC power to user', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x03FE, 4, 1,  null, true],
+            ['Battery Temperature', VARIABLETYPE_FLOAT, '~Temperature', 0.1,  0x0410, 4, 1,  null, true],
+            ['PV Electric Energy Today', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x047E, 4, 1,  null, true],
+            ['Energy to Grid total', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x041B, 4, 1,  null, true],
+            ['Energy to Grid today', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0419, 4, 1,  null, true],
+            ['Energy to User today', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0415, 4, 1,  null, true],
+            ['Charge power', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x03F4, 4, 1,  null, true],
+            ['Discharge power', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x03F2, 4, 1,  null, true],
+            ['Self electric Energy Today', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0476, 4, 1,  null, true],
+            ['Self electric Energy total', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0478, 4, 1,  null, true],
+            ['Eigenverbrauch Heute', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0476, 4, 1,  null, true]
         ];
 
         public function Destroy()
