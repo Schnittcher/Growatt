@@ -40,14 +40,14 @@
             "Inactive": "Inaktiv",
             "Timer Interval": "Timer Intervall",
             "Variables": "Variablen",
-            "PV Electric Energy Today": "PV Leistung Heute",
-            "Self electric Energy total": "Eigennutzung gesamt",
-            "Self electric Energy Today": "Eigennutzung Heute",
-            "Energy to Grid total": "Einspeisung gesamt",
-            "Energy to Grid today": "Einspeisung Heute",
-            "Energy to User today": "Stromimport Heute",
-            "Charge power": "Batterie Ladeleistung aktuell",
-            "Discharge power": "Batterie Nutzung aktuell",
+			"PV Electric Energy Today": "PV Leistung Heute",
+			"Self electric Energy total": "Eigennutzung gesamt",
+			"Self electric Energy Today": "Eigennutzung Heute",
+			"Energy to Grid total": "Einspeisung gesamt",
+			"Energy to Grid today": "Einspeisung Heute",
+			"Energy to User today": "Stromimport Heute",
+			"Charge power": "Batterie Ladeleistung aktuell",
+			"Discharge power": "Batterie Nutzung aktuell",
             "Read values": "Werte lesen"
         }
     }
