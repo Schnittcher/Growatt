@@ -60,6 +60,30 @@ class GrowattModBus extends IPSModule
         $this->RegisterTimer('UpdateTimer', 0, static::PREFIX . '_RequestRead($_IPS["TARGET"]);');
     }
 
+    public function resetVariables()
+    {
+        $NewRows = static::$Variables;
+        $Variables = [];
+        foreach ($NewRows as $Pos => $Variable) {
+            $Variables[] = [
+                'Ident'     => str_replace(' ', '', $Variable[0]),
+                'Name'      => $this->Translate($Variable[0]),
+                'VarType'   => $Variable[1],
+                'Profile'   => $Variable[2],
+                'Factor'    => $Variable[3],
+                'Address'   => $Variable[4],
+                'Function'  => $Variable[5],
+                'Quantity'  => $Variable[6],
+                'FunctionW' => $Variable[7],
+                'Pos'       => $Pos + 1,
+                'Keep'      => $Variable[8]
+            ];
+        }
+        IPS_SetProperty($this->InstanceID, 'Variables', json_encode($Variables));
+        IPS_ApplyChanges($this->InstanceID);
+        return;
+    }
+
     public function ApplyChanges()
     {
         //Never delete this line!
