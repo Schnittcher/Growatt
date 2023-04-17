@@ -247,12 +247,16 @@ class GrowattModBus extends IPSModule
                 switch ($Variable['Quantity']) {
                     case 1:
                         return unpack('n', $Value)[1];
+                    case 2:
+                        return unpack('n*', $Value)[1];
                 }
                 break;
             case VARIABLETYPE_FLOAT:
                 switch ($Variable['Quantity']) {
                     case 1:
                         return unpack('n', $Value)[1];
+                    case 2:
+                        return unpack('n*', $Value)[1];
                 }
                 break;
             case VARIABLETYPE_STRING:
