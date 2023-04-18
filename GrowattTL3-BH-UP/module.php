@@ -8,8 +8,7 @@ require_once __DIR__ . '/../libs/GrowattModBus.php';
     {
         const PREFIX = 'GWTL3BHUP';
         public static $Variables = [
-            ['Input Power', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0002, 4, 1,  null, true],
-            ['Input Power (high)', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0001, 4, 1,  null, true],
+            ['Input Power', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0001, 4, 2,  null, true],
             ['Total Energy', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0038, 4, 1,  null, true],
             ['Today Energy', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0036, 4, 1,  null, true],
             ['Grid frequency', VARIABLETYPE_FLOAT, '~Hertz', 0.01,  0x0025, 4, 1,  null, true],
@@ -38,8 +37,8 @@ require_once __DIR__ . '/../libs/GrowattModBus.php';
             ['Total electricity from grid', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0417, 4, 1,  null, true],
             ['Total power consumption', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x0427, 4, 1,  null, true],
             ['Battery State', VARIABLETYPE_INTEGER, '~Intensity.100', null,  0x03F6, 4, 1,  null, true],
-            ['AC power to grid', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x0400, 4, 2,  null, true],
-            ['AC power to user', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x03FE, 4, 2,  null, true],
+            ['AC power to grid', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x03FF, 4, 2,  null, true],
+            ['AC power to user', VARIABLETYPE_FLOAT, '~Watt', 0.1,  0x03FD, 4, 2,  null, true],
             ['Battery Temperature', VARIABLETYPE_FLOAT, '~Temperature', 0.1,  0x0410, 4, 1,  null, true],
             ['PV Electric Energy Today', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x047E, 4, 1,  null, true],
             ['Energy to Grid total', VARIABLETYPE_FLOAT, '~Electricity', 0.1,  0x041B, 4, 1,  null, true],
