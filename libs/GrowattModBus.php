@@ -272,7 +272,7 @@ class GrowattModBus extends IPSModule
                     case 1:
                         return unpack('n', $Value)[1];
                     case 2:
-                        return unpack('n*', $Value)[1];
+                        return unpack('N*', $Value)[1];
                 }
                 break;
             case VARIABLETYPE_FLOAT:
@@ -280,7 +280,7 @@ class GrowattModBus extends IPSModule
                     case 1:
                         return unpack('n', $Value)[1];
                     case 2:
-                        return unpack('n*', $Value)[1];
+                        return unpack('N*', $Value)[1];
                 }
                 break;
             case VARIABLETYPE_STRING:
