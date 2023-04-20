@@ -152,8 +152,14 @@ require_once __DIR__ . '/../libs/functions.php';
                             if (array_key_exists('pvenergytoday', $Payload['values'])) {
                                 $this->SetValue('pvenergytoday', $Payload['values']['pvenergytoday'] * 0.1);
                             }
+                            if (array_key_exists('pvenergytotal', $Payload['values'])) {
+                                $this->SetValue('pvenergytotal', $Payload['values']['pvenergytotal'] * 0.1);
+                            }
                             if (array_key_exists('epv1today', $Payload['values'])) {
                                 $this->SetValue('epv1today', $Payload['values']['epv1today'] * 0.1);
+                            }
+                            if (array_key_exists('epv1total', $Payload['values'])) {
+                                $this->SetValue('epv1total', $Payload['values']['epv1total'] * 0.1);
                             }
                             if (array_key_exists('pv1current', $Payload['values'])) {
                                 $this->SetValue('pv1current', $Payload['values']['pv1current'] * 0.1);
@@ -184,6 +190,9 @@ require_once __DIR__ . '/../libs/functions.php';
                             }
                             if (array_key_exists('pvgridcurrent', $Payload['values'])) {
                                 $this->SetValue('pvgridcurrent', $Payload['values']['pvgridcurrent'] * 0.1);
+                            }
+                            if (array_key_exists('pvgridcurrent2', $Payload['values'])) {
+                                $this->SetValue('pvgridcurrent2', $Payload['values']['pvgridcurrent'] * 0.1);
                             }
                             if (array_key_exists('pvgridcurrent3', $Payload['values'])) {
                                 $this->SetValue('pvgridcurrent3', $Payload['values']['pvgridcurrent3'] * 0.1);
